@@ -1,7 +1,7 @@
 {
   "name": "palermo",
   "version": "1.0.0",
-  "description": "Nuxt.js + Vuetify.js project",
+  "description": "Generate an Image like Palermos Straight",
   "author": "Tobias Wust",
   "private": true,
   "scripts": {
