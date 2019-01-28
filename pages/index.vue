@@ -6,7 +6,7 @@
       </div>
       <v-card>
         <v-card-text id="params">
-          <v-text-field clearable label="C1" id="c1" value="0, 0, 255"></v-text-field>
+          <v-text-field label="C1" id="c1" value="0, 0, 255"></v-text-field>
           <v-btn id="emptytBlue" @click.stop="emptytBlue">RND</v-btn>
           <v-btn id="resetBlue" @click.stop="resetBlue">Blue</v-btn>
 
