@@ -70,9 +70,9 @@ export default {
 
       console.log(colors)
 
-      for (let i = 0; i <= grid; i += 2) {
+      for (let i = 0; i < grid; i += 2) {
         const color = colors[Math.round(Math.random() * 2)]
-        for (let j = 0; j <= grid; j += 1) {
+        for (let j = 0; j < grid; j += 1) {
           const template = `<rect x="${i * pixels}" y="${j * pixels}" width="${pixels}" height="${pixels}" style="fill:${color};" />`
           document
             .getElementById('straight')
@@ -80,8 +80,8 @@ export default {
         }
       }
 
-      for (let i = 1; i <= grid; i += 2) {
-        for (let j = 0; j <= grid; j += 2) {
+      for (let i = 1; i < grid; i += 2) {
+        for (let j = 0; j < grid; j += 2) {
           const color = colors[Math.round(Math.random() * 2)]
           const template = `<rect x="${i * pixels}" y="${j * pixels}" width="${pixels}" height="${pixels}" style="fill:${color};" />`
           document

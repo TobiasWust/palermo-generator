@@ -26,8 +26,13 @@
     </v-navigation-drawer>
     <v-toolbar fixed app :clipped-left="clipped">
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
-      <v-btn icon @click.stop="saveImg">
+      <v-btn flat @click.stop="savePng">
         <v-icon>save</v-icon>
+        <span>PNG</span>
+      </v-btn>
+      <v-btn flat @click.stop="saveSvg">
+        <v-icon>save</v-icon>
+        <span>SVG</span>
       </v-btn>
     </v-toolbar>
     <v-content>
@@ -43,6 +48,8 @@
 
 <script>
   import saveSvgAsPng from 'save-svg-as-png'
+  import saveAs from 'file-saver'
+
   export default {
     data () {
       return {
@@ -60,8 +67,13 @@
       }
     },
     methods: {
-      saveImg () {
+      savePng () {
         saveSvgAsPng.saveSvgAsPng(document.getElementById('straight'), 'straight.png')
+      },
+      saveSvg () {
+        var text = document.getElementById('straight').outerHTML
+        var blob = new Blob([text], { type: 'image/svg+xml' })
+        saveAs(blob, 'straight.svg')
       }
     }
   }
