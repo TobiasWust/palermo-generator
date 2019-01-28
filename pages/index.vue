@@ -4,15 +4,15 @@
       <v-card>
         <v-card-media><svg style="background-color: white" viewBox="0 0 1000 1000" id="straight"></svg></v-card-media>
         <v-card-text id="params">
-          <v-text-field label="C1" id="c1" value="0, 0, 255"></v-text-field>
+          <input type="color" class="v-btn theme--dark" id="c1" value="#0000FF">
           <v-btn id="emptytBlue" @click.stop="emptytBlue">RND</v-btn>
           <v-btn id="resetBlue" @click.stop="resetBlue">Blue</v-btn>
 
-          <v-text-field label="C1" id="c2" value="255, 235, 59"></v-text-field>
+          <input type="color" class="v-btn theme--dark" id="c2" value="#FFEB3B">
           <v-btn id="emptytYellow" @click.stop="emptytYellow">RND</v-btn>
           <v-btn id="resetYellow" @click.stop="resetYellow">Yellow</v-btn>
 
-          <v-text-field label="C1" id="c3" value="255, 0, 0"></v-text-field>
+          <input type="color" class="v-btn theme--dark" id="c3" value="#FF0000">
           <v-btn id="emptytRed" @click.stop="emptytRed">RND</v-btn>
           <v-btn id="resetRed" @click.stop="resetRed">Red</v-btn>
 
@@ -49,10 +49,10 @@ export default {
   // },
   methods: {
     getColor () {
-      const r = Math.round(Math.random() * 255)
-      const g = Math.round(Math.random() * 255)
-      const b = Math.round(Math.random() * 255)
-      return `${r}, ${g}, ${b}`
+      const r = Math.round(Math.random() * 255).toString(16)
+      const g = Math.round(Math.random() * 255).toString(16)
+      const b = Math.round(Math.random() * 255).toString(16)
+      return `#${r}${g}${b}`
     },
     drawStraight () {
       document.getElementById('straight').innerHTML = ''
@@ -63,9 +63,9 @@ export default {
         // this.getColor(),
         // this.getColor(),
         // this.getColor()
-        document.getElementById('c1').value || this.getColor(),
-        document.getElementById('c2').value || this.getColor(),
-        document.getElementById('c3').value || this.getColor()
+        document.getElementById('c1').value === '#000000' ? this.getColor() : document.getElementById('c1').value,
+        document.getElementById('c2').value === '#000000' ? this.getColor() : document.getElementById('c2').value,
+        document.getElementById('c3').value === '#000000' ? this.getColor() : document.getElementById('c3').value
       ]
 
       console.log(colors)
@@ -73,7 +73,7 @@ export default {
       for (let i = 0; i <= grid; i += 2) {
         const color = colors[Math.round(Math.random() * 2)]
         for (let j = 0; j <= grid; j += 1) {
-          const template = `<rect x="${i * pixels}" y="${j * pixels}" width="${pixels}" height="${pixels}" style="fill:rgb(${color});" />`
+          const template = `<rect x="${i * pixels}" y="${j * pixels}" width="${pixels}" height="${pixels}" style="fill:${color};" />`
           document
             .getElementById('straight')
             .insertAdjacentHTML('beforeend', template)
@@ -83,7 +83,7 @@ export default {
       for (let i = 1; i <= grid; i += 2) {
         for (let j = 0; j <= grid; j += 2) {
           const color = colors[Math.round(Math.random() * 2)]
-          const template = `<rect x="${i * pixels}" y="${j * pixels}" width="${pixels}" height="${pixels}" style="fill:rgb(${color});" />`
+          const template = `<rect x="${i * pixels}" y="${j * pixels}" width="${pixels}" height="${pixels}" style="fill:${color};" />`
           document
             .getElementById('straight')
             .insertAdjacentHTML('beforeend', template)
@@ -91,13 +91,13 @@ export default {
       }
     },
     resetBlue () {
-      document.getElementById('c1').value = '0, 0, 255'
+      document.getElementById('c1').value = '#0000FF'
     },
     resetYellow () {
-      document.getElementById('c2').value = '255, 235, 59'
+      document.getElementById('c2').value = '#FFEB3B'
     },
     resetRed () {
-      document.getElementById('c3').value = '255, 0, 0'
+      document.getElementById('c3').value = '#FF0000'
     },
     emptytBlue () {
       document.getElementById('c1').value = ''
