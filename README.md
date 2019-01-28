@@ -1,5 +1,11 @@
 # palermo
 
+PWA to generate an image inspired by Blinky Palermos "Straight"
+
+Play around at https://palermo.wust.io
+
+Also check out the original piece in Munich https://www.pinakothek.de/kunst/blinky-palermo/straight
+
 > Nuxt.js + Vuetify.js project
 
 ## Build Setup
