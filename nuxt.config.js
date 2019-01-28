@@ -39,5 +39,27 @@ module.exports = {
   },
   modules: [
     '@nuxtjs/pwa'
-  ]
+  ],
+  manifest:
+  {
+    'dir': 'ltr',
+    'lang': 'en',
+    'name': 'Palermo Generator',
+    'scope': '/',
+    'display': 'minimal-ui',
+    'start_url': '/',
+    'short_name': 'Palermo',
+    'theme_color': 'transparent',
+    'description': 'Generate an Image like Palermos "Straight"',
+    'orientation': 'any',
+    'background_color': '#111',
+    'related_applications': [],
+    'prefer_related_applications': false,
+    'icons': [
+      {
+        'src': 'favicon.ico',
+        'sizes': '16x16'
+      }
+    ]
+  }
 }
