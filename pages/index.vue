@@ -1,10 +1,8 @@
 <template>
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md6>
-      <div class="text-xs-center">
-        <svg style="background-color: white" viewBox="0 0 1000 1000" id="straight"></svg>
-      </div>
       <v-card>
+        <v-card-media><svg style="background-color: white" viewBox="0 0 1000 1000" id="straight"></svg></v-card-media>
         <v-card-text id="params">
           <v-text-field label="C1" id="c1" value="0, 0, 255"></v-text-field>
           <v-btn id="emptytBlue" @click.stop="emptytBlue">RND</v-btn>
@@ -19,13 +17,20 @@
           <v-btn id="resetRed" @click.stop="resetRed">Red</v-btn>
 
           <v-text-field label="Grid" id="grid" value="41" type="number" steps="1"></v-text-field>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="primary" flat @click="drawStraight">generate</v-btn>
-        </v-card-actions>
+        </v-card-text>  
       </v-card>
     </v-flex>
+      <v-btn
+      color="primary"
+      @click="drawStraight"
+        dark
+        fixed
+        bottom
+        right
+        fab
+      >
+    <v-icon>autorenew</v-icon>
+  </v-btn>
   </v-layout>
 </template>
 
