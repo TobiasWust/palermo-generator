@@ -19,7 +19,6 @@
           <v-btn id="resetRed" @click.stop="resetRed">Red</v-btn>
 
           <v-text-field label="Grid" id="grid" value="41" type="number" steps="1"></v-text-field>
-          <input class="input-group--dirty" type="color">
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
