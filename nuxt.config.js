@@ -46,7 +46,7 @@ module.exports = {
     'lang': 'en',
     'name': 'Palermo Generator',
     'scope': '/',
-    'display': 'minimal-ui',
+    'display': 'standalone',
     'start_url': '/',
     'short_name': 'Palermo',
     'theme_color': 'transparent',
